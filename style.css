@@ -79,16 +79,25 @@ body{
 	text-align: left;
 }
 
+#heart {
+	color: #ffa6ac;
+}
 
+#heart:hover {
+	background: #e7e7e7;
+	cursor: default;
+}
 
 a {
 	text-decoration: inherit;
 	color: inherit;
 	transition: 0.2s ease-in-out;
+	font-size: 25px;
+
 }
 
 a:hover {
-	color: #ffd7b0;
+	color: #fff;
 }
 
 #footer {
