@@ -68,11 +68,13 @@ body{
 	text-align: right;
 	padding: 10px;
 	color: #333;
+	overflow: hidden;
 }
 
 .smalldisplay {
 	grid-column: 1/5;
 	padding: 10px;
+	overflow: hidden;
 }
 
 #working {

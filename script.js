@@ -78,8 +78,16 @@ operators.forEach(function(op){
 				else {
 					secondNum = parseFloat(currentNum);
 					ans = operate(firstNum, secondNum, operator);
-					if (ans.toString().length > 10)
+					
+
+					if (ans > 99999999)
 					{
+						console.log('big');
+						ans = ans.toExponential(5)
+					}
+					else if (ans.toString().length > 10)
+					{
+						console.log('oops');
 						ans = ans.toFixed(10);
 					}
 					answer.textContent = ans;
@@ -133,8 +141,14 @@ equal.addEventListener('click', function() {
 			secondNum = parseFloat(currentNum);
 			ans = operate(firstNum, secondNum, operator);
 			console.log(firstNum, secondNum);
-			if (ans.toString().length > 10)
+			if (ans > 99999999)
 				{
+					console.log('big');
+					ans = ans.toExponential(5);
+				}
+			else if (ans.toString().length > 10)
+				{
+					console.log('oops');
 					ans = ans.toFixed(10);
 				}
 			answer.textContent = ans;
