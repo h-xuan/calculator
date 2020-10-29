@@ -78,19 +78,21 @@ operators.forEach(function(op){
 				else {
 					secondNum = parseFloat(currentNum);
 					ans = operate(firstNum, secondNum, operator);
-					
 
 					if (ans > 99999999)
 					{
 						console.log('big');
-						ans = ans.toExponential(5)
+						answer.textContent = ans.toExponential(5).toString();
 					}
 					else if (ans.toString().length > 10)
 					{
 						console.log('oops');
-						ans = ans.toFixed(10);
+						ans = parseFloat(ans).toFixed(10);
+						answer.textContent = ans.toString();
 					}
-					answer.textContent = ans;
+					else {
+						answer.textContent = ans.toString();
+					}
 					firstNum = ans;
 					operator = symbol;
 				};
@@ -141,17 +143,22 @@ equal.addEventListener('click', function() {
 			secondNum = parseFloat(currentNum);
 			ans = operate(firstNum, secondNum, operator);
 			console.log(firstNum, secondNum);
+			
 			if (ans > 99999999)
 				{
 					console.log('big');
-					ans = ans.toExponential(5);
+					// ans = ans.toExponential(5);
+					answer.textContent = ans.toExponential(5).toString();
 				}
 			else if (ans.toString().length > 10)
 				{
-					console.log('oops');
-					ans = ans.toFixed(10);
+					ans = parseFloat(ans).toFixed(10);
+					answer.textContent = ans.toString();
 				}
-			answer.textContent = ans;
+				else {
+					answer.textContent = ans.toString();
+				}
+
 			working.textContent = "";
 			currentNum = "";
 			firstNum = undefined;
