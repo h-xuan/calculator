@@ -79,7 +79,7 @@ operators.forEach(function(op){
 					secondNum = parseFloat(currentNum);
 					ans = operate(firstNum, secondNum, operator);
 
-					if (ans > 99999999 || ans < 99999999)
+					if (ans > 99999999 || ans < -99999999)
 					{
 						answer.textContent = ans.toExponential(5).toString();
 					}
@@ -142,7 +142,7 @@ equal.addEventListener('click', function() {
 			ans = operate(firstNum, secondNum, operator);
 			console.log(firstNum, secondNum);
 			
-			if (ans > 99999999 || ans < 99999999)
+			if (ans > 99999999 || ans < -99999999)
 				{
 					// ans = ans.toExponential(5);
 					answer.textContent = ans.toExponential(5).toString();
